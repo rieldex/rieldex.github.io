@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Lora:ital,wght@0,400..700;1,400..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Character Universe</title>
+    <title>RIEL'S OC REPOSITORY</title>
     <style>
         * {
             margin: 0;
@@ -12,9 +15,9 @@
         }
 
         body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            background: #1a1a2e;
-            color: #eee;
+            font-family: 'JetBrains Mono', mono;
+            background: #0f0f0f;
+            color: #ba2727;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -23,34 +26,84 @@
         }
 
         h1 {
-            color: #e94560;
+            color: #ba2727;
             margin-bottom: 0.5rem;
             font-size: 2.5rem;
         }
 
-        .subtitle {
-            color: #888;
-            margin-bottom: 3rem;
-        }
+       .headersub-glow {
+  margin-bottom: 1em;
+  max-width: 500px;
+  font-size: 15px;
+  text-align: center;
+  color: #fff;
 
-        /* Button Grid */
-        .game-grid {
-            display: grid;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ba2727, 0 0 40px #ba2727, 0 0 50px #ba2727, 0 0 60px #ba2727, 0 0 70px #ba2727;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ba2727, 0 0 40px #ba2727, 0 0 50px #ba2727, 0 0 60px #ba2727, 0 0 70px #ba2727, 0 0 80px #ba2727;
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 4px #fff, 0 0 6px #ba2727, 0 0 8px #ba2727, 0 0 12px #ba2727, 0 0 16px #ba2727
+  }
+  to {
+    text-shadow: 0 0 4px #fff, 0 0 6px #990c0c, 0 0 8px #990c0c, 0 0 12px #990c0c, 0 0 16px #990c0c
+  }
+}
+
+
+        .text-grid {
+            display:grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
-            width: 100%;
+                width: 100%;
+    max-width: 600px;
+        }
+
+
+        .subtitle {
+            color: #e0e0e0;
+            margin-bottom: 3rem;
+            font-size:0.9rem;
+            text-align:justify;
+        }
+
+        @media (min-width: 600px) {
+        .subtitle:last-child {
+            border-left: 2px solid #ba2727; 
+            padding-left: 1.5rem; 
+            margin-bottom: 10
+            }
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
             max-width: 900px;
         }
 
-        /* Game Card/Button */
         .game-card {
-            background: #16213e;
-            border: 2px solid #0f3460;
-            border-radius: 12px;
+            background: #141414;
+            border: 4px solid #ba2727;
+            outline: 4px solid #ffffff;
+            box-shadow: 8px 8px 0px #400606; 
+            outline-offset: -8px;
+            border-radius: 0px;
             padding: 2rem;
             text-align: center;
             text-decoration: none;
-            color: #eee;
+            color: #fff;
             transition: all 0.3s;
             cursor: pointer;
             display: flex;
@@ -60,107 +113,165 @@
         }
 
         .game-card:hover {
-            border-color: #e94560;
+            border-color: #ba2727;
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
-        }
-
-        .game-icon {
-            font-size: 3rem;
+            
         }
 
         .game-title {
             font-size: 1.3rem;
             font-weight: bold;
-            color: #e94560;
+            color: #e01627;
         }
 
         .game-desc {
             font-size: 0.9rem;
-            color: #888;
+            color: #d9d9d9;
             line-height: 1.5;
         }
 
-        .play-btn {
-            background: #e94560;
-            color: white;
-            padding: 0.6rem 1.5rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
+        .game-char {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
             margin-top: 0.5rem;
-            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
         }
 
-        /* Character quick links (optional) */
-        .char-bar {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #0f3460;
-            text-align: center;
+        .tw-btn {
+        background: #e01627;
+        color: white;
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+        display: inline-block;
+        border: none; 
+        cursor: pointer;
+        font-family: 'JetBrains Mono', monospace;
         }
 
-        .char-btn {
-            display: inline-block;
-            margin: 0.3rem;
-            padding: 0.5rem 1rem;
-            background: #0f3460;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            color: #ccc;
+        .dropdown-content {
+        display: none;
+        position: relative;
+        font-family: 'JetBrains Mono', monospace;
+        font-size:0.8em;
+        min-width: 140px;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+        border: 3px solid #ba2727;
+        padding: 10px;
+        z-index: 10;
+        margin-top: 15px;
+        overflow: hidden; 
         }
+
+        .dropdown-content a {
+        color: white;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        display: block;
+        font-size: 0.8rem;
+        font-family: 'JetBrains Mono', monospace;
+    }
+
+        .dropdown-content a:hover {
+            background-color: #e01627; 
+    }
+
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+    }
+        
     </style>
 </head>
 <body>
-    <h1>🎭 Character Universe</h1>
-    <p class="subtitle">Interactive timelines, dossiers, and simulations</p>
+    <h1>RIEL'S OC REPOSITORY</h1>
+
+    <div class="headersub-glow"><b>18+ ONLY! contains mature themes, age gaps, mental illness, 
+and non-traditional relationship dynamics</b></div>
+
+    <div class="text-grid">
+        <p class="subtitle">hi! i'm riel. i'm a transgender + autistic trauma survivor, writer and amateur coder :] i love to write about flawed characters with lots of issues and unhealthy dynamics, so please heed warnings before reading anything!</p>
+        <p class="subtitle">this is my central repository for all my oc universes, with associated bios + projects in each page!</p>
+    </div>
+    
 
     <div class="game-grid">
-        <!-- Timeline Explorer -->
-        <a href="timeline-explorer/" class="game-card">
-            <div class="game-icon">📅</div>
-            <div class="game-title">Timeline Explorer</div>
+        <!-- ABSOLUTION -->
+        <div class="game-card" onclick="location.href='absolution/'">
+            <div class="game-title">Absolution</div>
             <div class="game-desc">
-                wip
+                A group of people who love each other even when they probably shouldn't.
             </div>
-            <span class="play-btn">Explore →</span>
-        </a>
+            <div class="game-char">MODERN SETTING. 2020s. AMERICA.<br>
+            FT. DOTTIE, MIKHAIL, RÉMY AND INGRAM<br></div>
+            <div class="dropdown">
+  <button class="tw-btn" onclick="event.stopPropagation()">TWs/CWs</button>
+  <div class="dropdown-content"><em>Age gaps, mental illness, past grooming, substance use, non-con, abuse</em></div></div>
+        </div>
 
-        <!-- Future: Phone Simulator -->
-        <a href="phone-simulator/" class="game-card">
-            <div class="game-icon">📱</div>
-            <div class="game-title">Phone Simulator</div>
+<!-- SIGURD -->
+        <div class="game-card" onclick="location.href='lindwurm/'">
+            <div class="game-title">The Lindwurm</div>
             <div class="game-desc">
-                tba
+                The same soul, iterated through multiple worlds.
             </div>
-            <span class="play-btn">Play →</span>
-        </a>
+            <div class="game-char">MULTIPLE, VARIOUS SETTINGS.<br>
+            FT. SIGURD AND OTHERS<br></div>
+            <div class="dropdown">
+                <button class="tw-btn" onclick="event.stopPropagation()">TWs/CWs</button>
+                <div class="dropdown-content"><em>Abuse, grooming, noncon/dubcon, murder, violence, mental illness</em></div></div>
+        </div>
 
-        <!-- Future: Contract Manager -->
-        <a href="contract-game/" class="game-card">
-            <div class="game-icon">📋</div>
-            <div class="game-title">Contract Manager</div>
+        <!-- HYAREM -->
+        <div class="game-card" onclick="location.href='hyarem/'">
+            <div class="game-title"> Asphodelus</div>
             <div class="game-desc">
-                tba
+                Can love be present through ownership and transaction? Time will tell.
             </div>
-            <span class="play-btn">Manage →</span>
-        </a>
+            <div class="game-char">MODERN SETTING. 2020s. EUROPE.<br>
+            FT. HYACINTH AND REMBRANDT<br></div>
+            <div class="dropdown">
+                <button class="tw-btn" onclick="event.stopPropagation()">TWs/CWs</button>
+                <div class="dropdown-content"><em>Substance abuse, suicide, homophobia, drug/sex trafficking, past grooming, dubcon</em></div></div>
+        </div>
 
-        <!-- Future: Relationship Web -->
-        <a href="relationship-web/" class="game-card">
-            <div class="game-icon">🕸️</div>
-            <div class="game-title">Relationship Web</div>
+        <!-- RENAULT -->
+        <div class="game-card" onclick="location.href='renault/'">
+            <div class="game-title">Renault Industries</div>
             <div class="game-desc">
-                tba
+                The shame of the family finds a cage and calls someone "Master".
             </div>
-            <span class="play-btn">View →</span>
-        </a>
+            <div class="game-char">MODERN SETTING. 2020s. AMERICA.<br>
+            FT. SUTTON, KADESTSKÁ, EVANDER & MORE.<br></div>
+            <div class="dropdown">
+                <button class="tw-btn" onclick="event.stopPropagation()">TWs/CWs</button>
+                <div class="dropdown-content"><em>Substance abuse, noncon, abuse, traumabonding, Stockholm syndrome, organised crime, emotional incest</em></div></div>
+        </div>
+
+<!-- PARAGONIA -->
+        <div class="game-card" onclick="location.href='paragonia/'">
+            <div class="game-title">The Paragonian Accord</div>
+            <div class="game-desc">
+                A knighted cat curls up in the furs with a  pup. The pack leader watches.
+            </div>
+            <div class="game-char">MEDIEVAL FANTASY. LOW MAGIC.<br>
+            FT. SOMNUM, CAEDES, EZEKIEL & MORE.<br></div>
+            <div class="dropdown">
+                <button class="tw-btn" onclick="event.stopPropagation()">TWs/CWs</button>
+                <div class="dropdown-content"><em>Substance abuse, noncon, abuse, traumabonding, Stockholm syndrome, organised crime, emotional incest</em></div></div>
+        </div>
+
+<!-- WIP -->
+        <div class="game-card" onclick="location.href='renault/'">
+            <div class="game-title">More to come...</div>
+            <div class="game-desc">
+                always a wip.
+            </div>
     </div>
 
-    <div class="char-bar">
-        <span class="char-btn">🐇 Dottie</span>
-        <span class="char-btn">🦅 Mikhail</span>
-        <span class="char-btn">🦊 Rémy</span>
-        <span class="char-btn">🐕 Ingram</span>
-    </div>
 </body>
 </html>
