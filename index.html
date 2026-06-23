@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Lora:ital,wght@0,400..700;1,400..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@
         }
 
         body {
-            font-family: 'JetBrains Mono', mono;
+            font-family: 'Rubik';
             background: #0f0f0f;
             color: #ba2727;
             min-height: 100vh;
@@ -26,21 +26,23 @@
         }
 
         h1 {
-            color: #ba2727;
+            color: #ab0000;
             margin-bottom: 0.5rem;
-            font-size: 2.5rem;
+            font-size: 2rem;
+            text-align:center;
+            font-weight:500;
         }
 
        .headersub-glow {
-  margin-bottom: 1em;
-  max-width: 500px;
-  font-size: 15px;
-  text-align: center;
-  color: #fff;
+            margin-bottom: 1rem;
+            max-width: 600px;
+            font-size: 15px;
+            text-align: justify;
+            color: #fff;
 
-  -webkit-animation: glow 1s ease-in-out infinite alternate;
-  -moz-animation: glow 1s ease-in-out infinite alternate;
-  animation: glow 1s ease-in-out infinite alternate;
+            -webkit-animation: glow 0.8s ease-in-out infinite alternate;
+            -moz-animation: glow 0.8s ease-in-out infinite alternate;
+            animation: glow 0.8s ease-in-out infinite alternate;
 }
 
 @-webkit-keyframes glow {
@@ -54,10 +56,17 @@
 
 @keyframes glow {
   from {
-    text-shadow: 0 0 4px #fff, 0 0 6px #ba2727, 0 0 8px #ba2727, 0 0 12px #ba2727, 0 0 16px #ba2727
+    text-shadow: 
+      0 0 4px #fff, 
+      0 0 8px rgba(186, 39, 39, 0.6);
   }
   to {
-    text-shadow: 0 0 4px #fff, 0 0 6px #990c0c, 0 0 8px #990c0c, 0 0 12px #990c0c, 0 0 16px #990c0c
+        text-shadow: 
+      0 0 4px #fff, 
+      0 0 10px #ff5c5c, 
+      0 0 20px #ba2727, 
+      0 0 40px #ba2727, 
+      0 0 60px #ba2727;
   }
 }
 
@@ -65,16 +74,16 @@
         .text-grid {
             display:grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-                width: 100%;
-    max-width: 600px;
+            gap: 1rem;
+            width: 100%;
+            max-width: 600px;
+            padding-bottom:40px;
         }
 
 
         .subtitle {
             color: #e0e0e0;
-            margin-bottom: 3rem;
-            font-size:0.9rem;
+            font-size:0.8rem;
             text-align:justify;
         }
 
@@ -82,7 +91,7 @@
         .subtitle:last-child {
             border-left: 2px solid #ba2727; 
             padding-left: 1.5rem; 
-            margin-bottom: 10
+            margin-bottom: 5px;
             }
         }
 
@@ -90,14 +99,22 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
-            max-width: 900px;
+            width: 900px; max-width: 100%;
         }
 
         .game-card {
             background: #141414;
             border: 4px solid #ba2727;
             outline: 4px solid #ffffff;
-            box-shadow: 8px 8px 0px #400606; 
+            box-shadow: 
+        1px 1px 0px #400000,
+        2px 2px 0px #400000,
+        3px 3px 0px #400000,
+        4px 4px 0px #400000,
+        5px 5px 0px #400000,
+        6px 6px 0px #400000,
+        7px 7px 0px #400000,
+        8px 8px 0px #400000; 
             outline-offset: -8px;
             border-radius: 0px;
             padding: 2rem;
@@ -139,28 +156,49 @@
             position: relative;
             display: inline-block;
             margin-top: 0.5rem;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'Lora';
         }
 
         .tw-btn {
         background: #e01627;
         color: white;
+        border: 4px solid #ba2727;
+        box-shadow: 
+        1px 1px 0px #400000,
+        2px 2px 0px #400000,
+        3px 3px 0px #400000,
+        4px 4px 0px #400000,
+        5px 5px 0px #400000,
+        6px 6px 0px #400000,
+        7px 7px 0px #400000,
+        8px 8px 0px #400000; 
         padding: 0.6rem 1rem;
         font-size: 0.8rem;
         display: inline-block;
         border: none; 
         cursor: pointer;
-        font-family: 'JetBrains Mono', monospace;
+        font-family: 'Rubik';
         }
 
         .dropdown-content {
         display: none;
         position: relative;
-        font-family: 'JetBrains Mono', monospace;
+        font-family: 'Rubik';
         font-size:0.8em;
-        min-width: 140px;
-        box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+        width:100%;
+        left: 51%;
+        transform: translateX(-50%);
+        background-color:#ba2727;
         border: 3px solid #ba2727;
+        box-shadow: 
+        1px 1px 0px #400000,
+        2px 2px 0px #400000,
+        3px 3px 0px #400000,
+        4px 4px 0px #400000,
+        5px 5px 0px #400000,
+        6px 6px 0px #400000,
+        7px 7px 0px #400000,
+        8px 8px 0px #400000; 
         padding: 10px;
         z-index: 10;
         margin-top: 15px;
@@ -190,12 +228,12 @@
 <body>
     <h1>RIEL'S OC REPOSITORY</h1>
 
-    <div class="headersub-glow"><b>18+ ONLY! contains mature themes, age gaps, mental illness, 
-and non-traditional relationship dynamics</b></div>
+    <div class="headersub-glow"><em>⚠️ 18+ only. contains mature themes, age gaps, mental illness, 
+ abuse, and  non-traditional relationship dynamics</em></div>
 
     <div class="text-grid">
         <p class="subtitle">hi! i'm riel. i'm a transgender + autistic trauma survivor, writer and amateur coder :] i love to write about flawed characters with lots of issues and unhealthy dynamics, so please heed warnings before reading anything!</p>
-        <p class="subtitle">this is my central repository for all my oc universes, with associated bios + projects in each page!</p>
+        <p class="subtitle">central repository for all my oc universes, with associated bios + projects in each page!</p>
     </div>
     
 
@@ -267,7 +305,7 @@ and non-traditional relationship dynamics</b></div>
 
 <!-- WIP -->
         <div class="game-card" onclick="location.href='renault/'">
-            <div class="game-title">More to come...</div>
+            <div class="game-title">more to come...</div>
             <div class="game-desc">
                 always a wip.
             </div>
