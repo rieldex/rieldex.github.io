@@ -1,315 +1,584 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RIEL'S OC REPOSITORY</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet"
+    />
 
-        body {
-            font-family: 'Rubik';
-            background: #0f0f0f;
-            color: #ba2727;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 2rem;
-        }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <head>
+        <title>RIEL'S OC REPOSITORY</title>
 
-        h1 {
-            color: #ab0000;
-            margin-bottom: 0.5rem;
-            font-size: 2rem;
-            text-align:center;
-            font-weight:500;
-        }
-
-       .headersub-glow {
-            margin-bottom: 1rem;
-            max-width: 600px;
-            font-size: 15px;
-            text-align: justify;
-            color: #fff;
-
-            -webkit-animation: glow 0.8s ease-in-out infinite alternate;
-            -moz-animation: glow 0.8s ease-in-out infinite alternate;
-            animation: glow 0.8s ease-in-out infinite alternate;
-}
-
-@-webkit-keyframes glow {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ba2727, 0 0 40px #ba2727, 0 0 50px #ba2727, 0 0 60px #ba2727, 0 0 70px #ba2727;
-  }
-  to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #ba2727, 0 0 40px #ba2727, 0 0 50px #ba2727, 0 0 60px #ba2727, 0 0 70px #ba2727, 0 0 80px #ba2727;
-  }
-}
-
-@keyframes glow {
-  from {
-    text-shadow: 
-      0 0 4px #fff, 
-      0 0 8px rgba(186, 39, 39, 0.6);
-  }
-  to {
-        text-shadow: 
-      0 0 4px #fff, 
-      0 0 10px #ff5c5c, 
-      0 0 20px #ba2727, 
-      0 0 40px #ba2727, 
-      0 0 60px #ba2727;
-  }
-}
-
-
-        .text-grid {
-            display:grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1rem;
-            width: 100%;
-            max-width: 600px;
-            padding-bottom:40px;
-        }
-
-
-        .subtitle {
-            color: #e0e0e0;
-            font-size:0.8rem;
-            text-align:justify;
-        }
-
-        @media (min-width: 600px) {
-        .subtitle:last-child {
-            border-left: 2px solid #ba2727; 
-            padding-left: 1.5rem; 
-            margin-bottom: 5px;
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
             }
-        }
 
-        .game-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            width: 900px; max-width: 100%;
-        }
+            body {
+                font-family: "Rubik";
+                background: #646464;
+                color: #ba2727;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
 
-        .game-card {
-            background: #141414;
-            border: 4px solid #ba2727;
-            outline: 4px solid #ffffff;
-            box-shadow: 
-        1px 1px 0px #400000,
-        2px 2px 0px #400000,
-        3px 3px 0px #400000,
-        4px 4px 0px #400000,
-        5px 5px 0px #400000,
-        6px 6px 0px #400000,
-        7px 7px 0px #400000,
-        8px 8px 0px #400000; 
-            outline-offset: -8px;
-            border-radius: 0px;
-            padding: 2rem;
-            text-align: center;
-            text-decoration: none;
-            color: #fff;
-            transition: all 0.3s;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-        }
+            .site-container {
+                width: 100%;
+                max-width: 1000px;
+                height: 100vh;
+                background: #161616;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+            }
 
-        .game-card:hover {
-            border-color: #ba2727;
-            transform: translateY(-5px);
-            
-        }
+            .site-header {
+                position: sticky;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.8);
+                padding-block: 1rem 1rem;
+                z-index: 10;
+                margin-bottom: 10px;
+            }
 
-        .game-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #e01627;
-        }
+            .content-wrapper {
+                margin-bottom: 60px;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                padding: 1.5rem;
+                overflow-y: auto;
+            }
 
-        .game-desc {
-            font-size: 0.9rem;
-            color: #d9d9d9;
-            line-height: 1.5;
-        }
+            .header-content {
+                width: 100%;
+                max-width: 1000px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-inline: 2rem;
+            }
 
-        .game-char {
-            font-size: 0.8rem;
-            color: #888;
-        }
+            @media (max-width: 600px) {
+                .header-content {
+                    flex-direction: column;
+                    gap: 0.5rem;
+                    padding-block: 0.5rem;
+                }
+            }
 
-        .dropdown {
-            position: relative;
-            display: inline-block;
-            margin-top: 0.5rem;
-            font-family: 'Lora';
-        }
+            .logo {
+                color: #ab0000;
+                font-size: 1.6rem;
+                font-weight: 700;
+                letter-spacing: 1px;
+            }
 
-        .tw-btn {
-        background: #e01627;
-        color: white;
-        border: 4px solid #ba2727;
-        box-shadow: 
-        1px 1px 0px #400000,
-        2px 2px 0px #400000,
-        3px 3px 0px #400000,
-        4px 4px 0px #400000,
-        5px 5px 0px #400000,
-        6px 6px 0px #400000,
-        7px 7px 0px #400000,
-        8px 8px 0px #400000; 
-        padding: 0.6rem 1rem;
-        font-size: 0.8rem;
-        display: inline-block;
-        border: none; 
-        cursor: pointer;
-        font-family: 'Rubik';
-        }
+            .nav-links {
+                display: flex;
+                gap: 0.5rem;
+                text-align: right;
+            }
 
-        .dropdown-content {
-        display: none;
-        position: relative;
-        font-family: 'Rubik';
-        font-size:0.8em;
-        width:100%;
-        left: 51%;
-        transform: translateX(-50%);
-        background-color:#ba2727;
-        border: 3px solid #ba2727;
-        box-shadow: 
-        1px 1px 0px #400000,
-        2px 2px 0px #400000,
-        3px 3px 0px #400000,
-        4px 4px 0px #400000,
-        5px 5px 0px #400000,
-        6px 6px 0px #400000,
-        7px 7px 0px #400000,
-        8px 8px 0px #400000; 
-        padding: 10px;
-        z-index: 10;
-        margin-top: 15px;
-        overflow: hidden; 
-        }
+            .nav-item {
+                color: #fff;
+                text-decoration: none;
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                font-weight: 500;
+                cursor: pointer;
+                transition: color 0.2s;
+            }
 
-        .dropdown-content a {
-        color: white;
-        padding: 0.5rem 1rem;
-        text-decoration: none;
-        display: block;
-        font-size: 0.8rem;
-        font-family: 'JetBrains Mono', monospace;
-    }
+            .nav-item:hover,
+            .nav-item.active {
+                color: #e01627;
+                text-decoration: underline;
+            }
 
-        .dropdown-content a:hover {
-            background-color: #e01627; 
-    }
+            .page-content {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+            }
 
+            .page-content.active-page {
+                display: flex;
+            }
 
-        .dropdown:hover .dropdown-content {
-            display: block;
-    }
-        
-    </style>
-</head>
-<body>
-    <h1>RIEL'S OC REPOSITORY</h1>
+            .headersub-glow {
+                background: #ba2727;
+                padding: 10px;
+                margin-bottom: 1.5rem;
+                max-width: 100%;
+                font-size: 15px;
+                text-align: justify;
+                color: #fff;
+                font-weight: 600;
+                animation: glow 0.8s ease-in-out infinite alternate;
+                box-shadow:
+                    1px 1px 0px #400000,
+                    2px 2px 0px #400000,
+                    3px 3px 0px #400000,
+                    4px 4px 0px #400000,
+                    5px 5px 0px #400000,
+                    6px 6px 0px #400000,
+                    7px 7px 0px #400000,
+                    8px 8px 0px #400000;
+            }
 
-    <div class="headersub-glow"><em>⚠️ 18+ only. contains mature themes, age gaps, mental illness, 
- abuse, and  non-traditional relationship dynamics</em></div>
+            @keyframes glow {
+                from {
+                    text-shadow:
+                        0 0 4px #fff,
+                        0 0 8px rgba(186, 39, 39, 0.6);
+                }
+                to {
+                    text-shadow:
+                        0 0 4px #fff,
+                        0 0 10px #ff5c5c,
+                        0 0 20px #ba2727,
+                        0 0 40px #ba2727,
+                        0 0 60px #ba2727;
+                }
+            }
 
-    <div class="text-grid">
-        <p class="subtitle">hi! i'm riel. i'm a transgender + autistic trauma survivor, writer and amateur coder :] i love to write about flawed characters with lots of issues and unhealthy dynamics, so please heed warnings before reading anything!</p>
-        <p class="subtitle">central repository for all my oc universes, with associated bios + projects in each page!</p>
-    </div>
-    
+            .text-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5rem;
+                width: 100%;
+                max-width: 100%;
+                padding-bottom: 40px;
+            }
 
-    <div class="game-grid">
-        <!-- ABSOLUTION -->
-        <div class="game-card" onclick="location.href='absolution/'">
-            <div class="game-title">Absolution</div>
-            <div class="game-desc">
-                A group of people who love each other even when they probably shouldn't.
-            </div>
-            <div class="game-char">MODERN SETTING. 2020s. AMERICA.<br>
-            FT. DOTTIE, MIKHAIL, RÉMY AND INGRAM<br></div>
-            <div class="dropdown">
-  <button class="tw-btn" onclick="event.stopPropagation()">TWs/CWs</button>
-  <div class="dropdown-content"><em>Age gaps, mental illness, past grooming, substance use, non-con, abuse</em></div></div>
+            .subtitle {
+                color: #e0e0e0;
+                font-size: 0.9rem;
+                text-align: justify;
+                line-height: 1.4;
+                max-width: 80%;
+                padding-bottom: 20px;
+            }
+
+            .game-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                gap: 1.5rem;
+                width: 100%;
+            }
+
+            .game-card {
+                background: #141414;
+                border: 4px solid #ba2727;
+                outline: 4px solid #ffffff;
+                box-shadow:
+                    1px 1px 0px #400000,
+                    2px 2px 0px #400000,
+                    3px 3px 0px #400000,
+                    4px 4px 0px #400000,
+                    5px 5px 0px #400000,
+                    6px 6px 0px #400000,
+                    7px 7px 0px #400000,
+                    8px 8px 0px #400000;
+                outline-offset: -8px;
+                padding: 1rem;
+                text-align: center;
+                text-decoration: none;
+                color: #fff;
+                transition: all 0.3s;
+                cursor: pointer;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .game-card:hover {
+                border-color: #ba2727;
+                transform: translateY(-5px);
+            }
+
+            .game-title {
+                font-size: 1.2rem;
+                font-weight: bold;
+                color: #e01627;
+            }
+
+            .game-desc {
+                font-size: 0.8rem;
+                color: #d9d9d9;
+                line-height: 1.5;
+            }
+
+            .game-char {
+                font-size: 0.8rem;
+                text-transform: lowercase;
+                color: #888;
+                line-height: 1;
+            }
+
+            .dropdown {
+                position: relative;
+                display: inline-block;
+                margin-top: 0.5rem;
+            }
+
+            .tw-btn {
+                background: #ba2727;
+                color: white;
+                border: none;
+                box-shadow:
+                    1px 1px 0px #400000,
+                    2px 2px 0px #400000,
+                    3px 3px 0px #400000,
+                    4px 4px 0px #400000,
+                    5px 5px 0px #400000,
+                    6px 6px 0px #400000,
+                    7px 7px 0px #400000,
+                    8px 8px 0px #400000;
+                padding: 0.6rem 1rem;
+                font-size: 0.8rem;
+                display: inline-block;
+                cursor: pointer;
+                font-family: "Rubik";
+                margin-top: auto;
+                margin-bottom: 10px;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: relative;
+                font-family: "Rubik";
+                font-size: 0.8em;
+                width: 200px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: #ba2727;
+                border: 3px solid #ba2727;
+                box-shadow:
+                    1px 1px 0px #400000,
+                    2px 2px 0px #400000,
+                    3px 3px 0px #400000,
+                    4px 4px 0px #400000,
+                    5px 5px 0px #400000,
+                    6px 6px 0px #400000,
+                    7px 7px 0px #400000,
+                    8px 8px 0px #400000;
+                padding: 10px;
+                z-index: 10;
+                margin-top: 15px;
+                margin-bottom: 10px;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            .about-title {
+                color: #ab0000;
+                margin-bottom: 1.5rem;
+                font-weight: 500;
+                font-size: 1.5rem;
+            }
+
+            .about-layout {
+                max-width: 600px;
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .about-text {
+                color: #e0e0e0;
+                font-size: 0.95rem;
+                line-height: 1.6;
+                text-align: justify;
+            }
+
+            .site-footer {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.8);
+                padding-block: 1rem 0.5rem;
+                z-index: 10;
+            }
+
+            .footer-content {
+                width: 100%;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .footer-links {
+                display: flex;
+                gap: 1rem;
+                margin-right: 10px;
+            }
+
+            .footer-links a {
+                color: #ba2727;
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.2s ease;
+            }
+
+            .footer-links a:hover {
+                color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="site-container">
+            <header class="site-header">
+                <div class="header-content">
+                    <div class="logo">RIEL'S OC REPOSITORY</div>
+                    <nav class="nav-links">
+                        <a
+                            class="nav-item active"
+                            onclick="switchPage('home', event)"
+                            >Universes</a
+                        >
+                        <a class="nav-item" onclick="switchPage('about', event)"
+                            >About</a
+                        >
+                    </nav>
+                </div>
+            </header>
+            <main class="content-wrapper">
+                <section id="page-home" class="page-content active-page">
+                    <div class="headersub-glow">
+                        <em
+                            >⚠️ 18+ only. contains mature themes, age gaps,
+                            mental illness, abuse, and non-traditional
+                            relationship dynamics</em
+                        >
+                    </div>
+                    <p class="subtitle">
+                        central repository for all my oc universes, with
+                        associated bios and code projects in each page! click on
+                        any card to explore the universe settings, character
+                        rosters, and specific trigger warnings.
+                    </p>
+
+                    <div class="game-grid">
+                        <div
+                            class="game-card"
+                            onclick="location.href = 'absolution/'"
+                        >
+                            <div class="game-title">Absolution</div>
+                            <div class="game-desc">
+                                A group of people who love each other even when
+                                they probably shouldn't.
+                            </div>
+                            <div class="game-char">
+                                MODERN SETTING. 2020s. AMERICA.<br />FT. DOTTIE,
+                                MIKHAIL, RÉMY AND INGRAM
+                            </div>
+                            <div class="dropdown">
+                                <button
+                                    class="tw-btn"
+                                    onclick="event.stopPropagation()"
+                                >
+                                    TWs/CWs
+                                </button>
+                                <div class="dropdown-content">
+                                    <em
+                                        >Age gaps, mental illness, past
+                                        grooming, substance use, non-con,
+                                        abuse</em
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="game-card"
+                            onclick="location.href = 'lindwurm/'"
+                        >
+                            <div class="game-title">The Lindwurm</div>
+                            <div class="game-desc">
+                                The same soul, iterated through multiple worlds.
+                            </div>
+                            <div class="game-char">
+                                MULTIPLE, VARIOUS SETTINGS.<br />FT. SIGURD AND
+                                OTHERS
+                            </div>
+                            <div class="dropdown">
+                                <button
+                                    class="tw-btn"
+                                    onclick="event.stopPropagation()"
+                                >
+                                    TWs/CWs
+                                </button>
+                                <div class="dropdown-content">
+                                    <em
+                                        >Abuse, grooming, noncon/dubcon, murder,
+                                        violence, mental illness</em
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="game-card"
+                            onclick="location.href = 'hyarem/'"
+                        >
+                            <div class="game-title">Asphodelus</div>
+                            <div class="game-desc">
+                                Can love be present through ownership and
+                                transaction? Time will tell.
+                            </div>
+                            <div class="game-char">
+                                MODERN SETTING. 2020s. EUROPE.<br />FT. HYACINTH
+                                AND REMBRANDT
+                            </div>
+                            <div class="dropdown">
+                                <button
+                                    class="tw-btn"
+                                    onclick="event.stopPropagation()"
+                                >
+                                    TWs/CWs
+                                </button>
+                                <div class="dropdown-content">
+                                    <em
+                                        >Substance abuse, suicide, homophobia,
+                                        drug/sex trafficking, past grooming,
+                                        dubcon</em
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="game-card"
+                            onclick="location.href = 'renault/'"
+                        >
+                            <div class="game-title">Renault Industries</div>
+                            <div class="game-desc">
+                                The shame of the family finds a cage and calls
+                                someone "Master".
+                            </div>
+                            <div class="game-char">
+                                MODERN SETTING. 2020s. AMERICA.<br />FT. SUTTON,
+                                KADESTSKÁ, EVANDER & MORE.
+                            </div>
+                            <div class="dropdown">
+                                <button
+                                    class="tw-btn"
+                                    onclick="event.stopPropagation()"
+                                >
+                                    TWs/CWs
+                                </button>
+                                <div class="dropdown-content">
+                                    <em
+                                        >Substance abuse, noncon, abuse,
+                                        traumabonding, Stockholm syndrome,
+                                        organised crime, emotional incest</em
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="game-card"
+                            onclick="location.href = 'paragonia/'"
+                        >
+                            <div class="game-title">The Paragonian Accord</div>
+                            <div class="game-desc">
+                                A knighted cat curls up in the furs with a pup.
+                                The pack leader watches.
+                            </div>
+                            <div class="game-char">
+                                MEDIEVAL FANTASY. LOW MAGIC.<br />FT. SOMNUM,
+                                CAEDES, EZEKIEL & MORE.
+                            </div>
+                            <div class="dropdown">
+                                <button
+                                    class="tw-btn"
+                                    onclick="event.stopPropagation()"
+                                >
+                                    TWs/CWs
+                                </button>
+                                <div class="dropdown-content">
+                                    <em
+                                        >Substance abuse, noncon, abuse,
+                                        traumabonding, Stockholm syndrome,
+                                        organised crime, emotional incest</em
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="game-card">
+                            <div class="game-title">more to come...</div>
+                            <div class="game-desc">always a wip.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="page-about" class="page-content">
+                    <h2 class="about-title">ABOUT THE AUTHOR</h2>
+                    <div class="about-layout">
+                        <p class="about-text">
+                            hi! i'm riel. i'm a transgender + autistic trauma
+                            survivor, writer, artist and amateur coder :] i love
+                            to write about flawed characters with lots of issues
+                            and unhealthy dynamics, so please heed warnings
+                            before reading anything!
+                        </p>
+                        <p class="about-text">
+                            this layout acts as a central hub for my creative
+                            projects. feel free to look around ^_^
+                        </p>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="site-footer">
+                <div class="footer-content">
+                    <div></div>
+                    <div class="footer-links">
+                        <a href="https://toyhou.se/rieldex/">TOYHOU.SE</a>
+                        <a href="https://tumblr.com/durgepilled">TUMBLR</a>
+                    </div>
+                </div>
+            </footer>
         </div>
 
-<!-- SIGURD -->
-        <div class="game-card" onclick="location.href='lindwurm/'">
-            <div class="game-title">The Lindwurm</div>
-            <div class="game-desc">
-                The same soul, iterated through multiple worlds.
-            </div>
-            <div class="game-char">MULTIPLE, VARIOUS SETTINGS.<br>
-            FT. SIGURD AND OTHERS<br></div>
-            <div class="dropdown">
-                <button class="tw-btn" onclick="event.stopPropagation()">TWs/CWs</button>
-                <div class="dropdown-content"><em>Abuse, grooming, noncon/dubcon, murder, violence, mental illness</em></div></div>
-        </div>
-
-        <!-- HYAREM -->
-        <div class="game-card" onclick="location.href='hyarem/'">
-            <div class="game-title"> Asphodelus</div>
-            <div class="game-desc">
-                Can love be present through ownership and transaction? Time will tell.
-            </div>
-            <div class="game-char">MODERN SETTING. 2020s. EUROPE.<br>
-            FT. HYACINTH AND REMBRANDT<br></div>
-            <div class="dropdown">
-                <button class="tw-btn" onclick="event.stopPropagation()">TWs/CWs</button>
-                <div class="dropdown-content"><em>Substance abuse, suicide, homophobia, drug/sex trafficking, past grooming, dubcon</em></div></div>
-        </div>
-
-        <!-- RENAULT -->
-        <div class="game-card" onclick="location.href='renault/'">
-            <div class="game-title">Renault Industries</div>
-            <div class="game-desc">
-                The shame of the family finds a cage and calls someone "Master".
-            </div>
-            <div class="game-char">MODERN SETTING. 2020s. AMERICA.<br>
-            FT. SUTTON, KADESTSKÁ, EVANDER & MORE.<br></div>
-            <div class="dropdown">
-                <button class="tw-btn" onclick="event.stopPropagation()">TWs/CWs</button>
-                <div class="dropdown-content"><em>Substance abuse, noncon, abuse, traumabonding, Stockholm syndrome, organised crime, emotional incest</em></div></div>
-        </div>
-
-<!-- PARAGONIA -->
-        <div class="game-card" onclick="location.href='paragonia/'">
-            <div class="game-title">The Paragonian Accord</div>
-            <div class="game-desc">
-                A knighted cat curls up in the furs with a  pup. The pack leader watches.
-            </div>
-            <div class="game-char">MEDIEVAL FANTASY. LOW MAGIC.<br>
-            FT. SOMNUM, CAEDES, EZEKIEL & MORE.<br></div>
-            <div class="dropdown">
-                <button class="tw-btn" onclick="event.stopPropagation()">TWs/CWs</button>
-                <div class="dropdown-content"><em>Substance abuse, noncon, abuse, traumabonding, Stockholm syndrome, organised crime, emotional incest</em></div></div>
-        </div>
-
-<!-- WIP -->
-        <div class="game-card" onclick="location.href='renault/'">
-            <div class="game-title">more to come...</div>
-            <div class="game-desc">
-                always a wip.
-            </div>
-    </div>
-
-</body>
+        <script>
+            function switchPage(pageId, event) {
+                document.querySelectorAll(".page-content").forEach((page) => {
+                    page.classList.remove("active-page");
+                });
+                document.querySelectorAll(".nav-item").forEach((link) => {
+                    link.classList.remove("active");
+                });
+                document
+                    .getElementById("page-" + pageId)
+                    .classList.add("active-page");
+                event.currentTarget.classList.add("active");
+            }
+        </script>
+    </body>
 </html>
